@@ -1,130 +1,397 @@
 <!DOCTYPE html>
-<html>
-    <html lang="en">
-        <head>
-            <meta charset="UTF-8">
-            <meta http-equiv="X-UA-Compatible" content="IE=edge">
-            <meta name="viewport" content="width=device-width, initial-scale=1.0">
-            <title> vikash Recipes</title>
-            <link rel="stylesheet" href="styles.css" />
-            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" >
-         <link rel="icon" href="data:image/png;base64,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">
-        </head>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Portfolio</title>
+   
+    <!-- custom css file link  -->
+    <link rel="stylesheet" href="style.css">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+
+
+</head>
 <body>
-    <div style="position: fixed; width: 100%;">
-<div  class="container"">
-<section class="right">
-    <p class="p"><b>Trending Post</b> Amazing <a href="#">CrockPot Apple Dumb Cake</a></p>
-</section>
-<section class="Left">
-    <h2>Deepak Recipes</h2>
-</section>
-</div>
 
-<div class="secondContainer">
-<a class="active" href="#home">Home</a>
-    <a href="#about">About</a>
-    <a href="#contact">Recipe Index</a>
-    <a href="#tips">Tips</a>
-    <form action="/action_page.php">
-        <input type="text" placeholder="Search.." name="search">
-        <button  class="button" type="submit"><i class="fa fa-search" id="search"></i></button>
-      </form>
+<!-- custom cursors  -->
+<div class="cursor-1"></div>
+<div class="cursor-2"></div>
+
+<div id="menu-bars" class="fas fa-bars"></div>
+    
+<!-- header section  -->
+
+<header>
+
+    <a href="#" class="logo"> <span>vikash</span> gupta </a>
+
+    <nav class="navbar">
+        <a href="#home">home</a>
+        <a href="#about">about</a>
+        <a href="#service">service</a>
+        <a href="#experience">experience</a>
+        <a href="#portfolio">portfolio</a>
+        <a href="#contact">contact</a>
+    </nav>
+
+    <div class="follow">
+        <a href="https://www.facebook.com/vikash.gupta.16718/" class="fab fa-facebook-f"></a>
+        <a href="https://twitter.com/vikashgupta_29" class="fab fa-twitter"></a>
+        <a href="https://www.instagram.com/vikashgupta_29/" class="fab fa-instagram"></a>
+        <a href="https://www.linkedin.com/in/vikash-gupta-2910oct/" class="fab fa-linkedin"></a>
     </div>
 
+</header>
 
-    <div class="second">
-      
-    <!-- <a class="diet" href="#home">Browse by diet</a> -->
-    <button type="button" class="btnsocialmedia">
-    <label for="diet"></label>
-<select id="diet">
-  <option value="diet" ><a href="www.google.com">Browse your diet</a></option>
-  <option value="glutton">Gluton free reciep</option>
-  <option value="diary free">Diary free</option>
-  <option value="Vegan">Vegan</option>
-  <option value="keto">Keto</option>
-</select>
-</button>
-    <a href="#appetizer"><button type="button" class="btnsocialmedia">Appetizer</button></a>
-    <a href="#breakfast"><button type="button" class="btnsocialmedia">BreakFast</button></a>
-    <a href="#dessert"><button type="button" class="btnsocialmedia">Dessert</button></a>
-    <a href="#dinner"><button type="button" class="btnsocialmedia">Dinner</button></a>
-    <a href="#side dish"><button type="button" class="btnsocialmedia">Side Dish</button></a>
+<!-- header section ends -->
 
-</div>
-</div>
-<div>
-<h1>Crock Pound Cake Recipe</h1><br><br>
-29 july,2022
-<br><br>
-<div class="socialmedia">
-<a href="https://www.facebook.com/" class="fa fa-facebook"></a>
-<a href="https://twitter.com/" class="fa fa-twitter"></a>
-<a href="https://www.linkedin.com/in/" class="fa fa-linkedin"></a>
-<a href="https://www.youtube.com/" class="fa fa-youtube"></a>
-<a href="https://www.instagram.com/accounts/login/" class="fa fa-instagram"></a>
-</div>
-<div class="content">
-    <img class="image" src="https://momswithcrockpots.com/wp-content/uploads/2015/06/Crockpot-pound-cake-5.jpg">
-    <p>Dessert in the crockpot is a lovely thing. There is no heating the kitchen,<br> and dessert is warm and ready to go right after dinner. This Crockpot Pound Cake did not disappoint.</p><br>
-    <img src="https://4.bp.blogspot.com/-hZguEYv1ILQ/W0Jp9QEN26I/AAAAAAAAsJ0/gkvY87WZNxQIMdkpBjqIMoNMHlet9zO9wCLcBGAs/s1600/IMG_3782.PNG">
-    <p>This is a simple pound cake that always turns out moist and delicious. I used my 4 quart crockpot for this recipe.</p><br><br>
-    <img src="https://static01.nyt.com/images/2015/02/18/dining/18CROCKPOT2/18CROCKPOT2-mediumThreeByTwo440.jpg">
-<p>I whipped the cake batter together really quick. I made mine gluten free and dairy free, but feel free to use regular butter & flour. It turns out great both ways.</p>
+<!-- home section starts  -->
 
-<br><br>
-<img src="https://images-gmi-pmc.edge-generalmills.com/c2462c96-4a12-484b-ad78-4bbc2ce6505f.jpg">
-<p>You are going to want to grease the crock VERY WELL before you pour the batter in. Once you pour the batter into the crock pot you are going to want to put a toothpick or spoon to crack the lid open a bit. This allows the steam to be released while the cake bakes.  I did notice about half way through that the steam was still collecting on the lid.  I took a couple paper towels and place them between the lid and the crock to catch any drips. It worked perfectly! Cook on high for about 3 1/2 -4 hours.</p><br><br>
-</div>
+<section class="home" id="home">
 
-<div class="cake">
-
-   <h1>Crockpot Pound Cake</h1> <br><br>
-<button type="button" class="button " >PRINT RECEIP</button>
- <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSKj9rhx-ZQrv_hgn8uEdBA0zkj-hjw0XZHUw&usqp=CAU">
-</div>
-<div class="describe">
-    <p><b>Prep Time:</b>10 Mins <b>Cook Time:</b>4 Hr <b>Stotal Time:</b>4 Hrs 10 Mins</p>
-</div>
-<div class="ingredients">
-    <h3>INGREDIENTS</h3><br>
-    <ul>
-    <li>1 cup butter</li>
-<li>2 cups sugar</li>
-<li>6 eggs</li>
-<li>2 cups flour</li>
-<li>2 teaspoon vanilla extract</li>
-</ul><br>
-<h3>INSTRUCTIONS</h3><br>
-<ol>
-<li>Beat together butter & sugar until creamy. Stir in eggs & vanilla. Finally Mix in flour until smooth.</li>
-<li>Pour batter into a well greased 4 quart crock pot. Prop the lid open a little with a toothpick or spoon. You may even want to place a couple paper towels between the lid and the crock to keep the moisture off of the top of the cake.</li>
-<li>Bake for 3 1/2 - 4 hours on high or until a toothpick inserted in the center comes clean.Gluten Free</li>
-<li>Use a gluten free flour mix instead of regular flourDairy Free</li>
-<li>Use a dairy free margarine instead of butter.</li>
-</ol>
-
-</div>
-<div class="socialmedia">
-    <a href="https://www.facebook.com/" class="fa fa-facebook"></a>
-    <a href="https://twitter.com" class="fa fa-twitter"></a>
-    <a href="https://www.linkedin.com/in/" class="fa fa-linkedin"></a>
-    <a href="https://www.youtube.com/" class="fa fa-youtube"></a>
-    <a href="https://www.instagram.com/accounts/login/" class="fa fa-instagram"></a>
+    <div class="content">
+        <span class="hi"> hi there... </span>
+        <h3> i am <span> vikash gupta </span> </h3>
+        <p class="info"> i am a front-end developer </p>
+        <p class="text"> Lorem ipsum dolor, sit amet consectetur adipisicing elit. Alias quidem excepturi natus iste ut. Alias, quod? Earum pariatur obcaecati dolorum! </p>
+        <a href="#about" class="btn">about me</a>
     </div>
-<a href="https://momswithcrockpots.com/crockpot-pound-cake/#"> <button type="button" class="btncake"># CAKE</button></a>
- <div class="forward">
-    <section class="leftsection"><a href="https://momswithcrockpots.com/crockpot-brussels-sprouts/"><button type="button" class="btnnxt"><h4>← Previous</h4></button></a>
-    </section>
-    <section class="rightsection"><a href="https://momswithcrockpots.com/category/vegan-recipes/"><button type="button" class="btnnxt"><h4 >Next →</h4 ></button></a>
-    </section>
 
- </div>  
- <div class="footer">
-<p class="footerp">|  THE vikash FOOD PUBLISHER  |</p><br><br>
-<p>© 2022 Moms with Crockpots</p>
- </div>
- </div>
+    <div class="image">
+        <img src="images/home-img.jpeg" alt="">
+    </div>
+
+</section>
+
+<!-- home section ends -->
+
+<!-- about section starts  -->
+
+<section class="about" id="about">
+
+<h1 class="heading"> about <span> me </span> </h1>
+
+<div class="row-1">
+
+    <div class="image">
+        <img src="images/about-img.jpg" alt="">
+    </div>
+
+    <div class="content">
+        <h3> my name is vikash gupta & i am a font-end developer </h3>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nisi error molestias impedit officia! Exercitationem dignissimos esse eos quas nisi impedit delectus, voluptate ullam iste nostrum at. Dolor culpa eaque omnis.</p>
+        <div class="box-container">
+            <div class="box">
+                <p> <span> age : </span> 28 </p>
+                <p> <span> gender : </span> male </p>
+                <p> <span> language : </span> hindi, english </p>
+                <p> <span> work : </span> front-end developer </p>
+            </div>
+            <div class="box">
+                <p> <span> freelance : </span> available </p>
+                <p> <span> phone : </span> +91-8087490079 </p>
+                <p> <span> email : </span> vikashraj0024@gmail.com </p>
+                <p> <span> country : </span> india </p>
+            </div>
+        </div>
+        <a href="#" class="btn">download CV</a>
+        <a href="#" class="btn">hire me</a>
+    </div>
+
+</div>
+
+<h1 class="heading"> <span> my </span> skills </h1>
+
+<div class="row-2">
+
+    <div class="skills">
+        <div class="progress">
+            <h3> web design <span> 95% </span> </h3>
+            <div class="bar"> <span></span> </div>
+        </div>
+        <div class="progress">
+            <h3> web development <span> 80% </span> </h3>
+            <div class="bar"> <span></span> </div>
+        </div>
+        <div class="progress">
+            <h3> UI design <span> 75% </span> </h3>
+            <div class="bar"> <span></span> </div>
+        </div>
+        <div class="progress">
+            <h3> seo marketing <span> 85% </span> </h3>
+            <div class="bar"> <span></span> </div>
+        </div>
+    </div>
+
+    <div class="box-container">
+
+        <div class="box">
+            <h3> >> 2+ </h3>
+            <p>years of experience</p>
+        </div>
+        <div class="box">
+            <h3> >> 250+ </h3>
+            <p>happy clients</p>
+        </div>
+        <div class="box">
+            <h3> >> 150+ </h3>
+            <p>projects completed</p>
+        </div>
+        <div class="box">
+            <h3> >> 12+ </h3>
+            <p>awards won</p>
+        </div>
+
+    </div>
+
+</div>
+
+</section>
+
+<!-- about section ends -->
+
+<!-- service section starts  -->
+
+<section class="service" id="service">
+
+<h1 class="heading"> <span> my </span> services </h1>
+
+    <div class="box-container">
+
+        <div class="box">
+            <i class="fas fa-code"></i>
+            <h3>web design</h3>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit, facere?</p>
+        </div>
+
+        <div class="box">
+            <i class="fas fa-paint-brush"></i>
+            <h3>graphic design</h3>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit, facere?</p>
+        </div>
+
+        <div class="box">
+            <i class="fas fa-mobile"></i>
+            <h3>responsive design</h3>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit, facere?</p>
+        </div>
+
+        <div class="box">
+            <i class="fas fa-bullhorn"></i>
+            <h3>seo marketing</h3>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit, facere?</p>
+        </div>
+
+        <div class="box">
+            <i class="fas fa-chart-line"></i>
+            <h3>digital marketing</h3>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit, facere?</p>
+        </div>
+
+        <div class="box">
+            <i class="fas fa-envelope"></i>
+            <h3>email marketing</h3>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit, facere?</p>
+        </div>
+
+    </div>
+
+</section>
+
+<!-- service section ends -->
+
+<!-- experience section starts  -->
+
+<section class="experience" id="experience">
+
+    <h1 class="heading"> <span> my </span> experience </h1>
+
+    <div class="box-container">
+
+        <div class="box">
+            <div class="content">
+                <span> 2015 - 2016 </span>
+                <h3>front-end development</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae vel quasi consectetur expedita ipsam similique maiores ipsa? Error, debitis ullam.</p>
+            </div>
+        </div>
+
+        <div class="box">
+            <div class="content">
+                <span> 2016 - 2017 </span>
+                <h3>front-end development</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae vel quasi consectetur expedita ipsam similique maiores ipsa? Error, debitis ullam.</p>
+            </div>
+        </div>
+
+        <div class="box">
+            <div class="content">
+                <span> 2017 - 2018 </span>
+                <h3>front-end development</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae vel quasi consectetur expedita ipsam similique maiores ipsa? Error, debitis ullam.</p>
+            </div>
+        </div>
+
+        <div class="box">
+            <div class="content">
+                <span> 2018 - 2019 </span>
+                <h3>front-end development</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae vel quasi consectetur expedita ipsam similique maiores ipsa? Error, debitis ullam.</p>
+            </div>
+        </div>
+
+        <div class="box">
+            <div class="content">
+                <span> 2019 - 2020 </span>
+                <h3>front-end development</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae vel quasi consectetur expedita ipsam similique maiores ipsa? Error, debitis ullam.</p>
+            </div>
+        </div>
+
+        <div class="box">
+            <div class="content">
+                <span> 2020 - 2021 </span>
+                <h3>front-end development</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae vel quasi consectetur expedita ipsam similique maiores ipsa? Error, debitis ullam.</p>
+            </div>
+        </div>
+
+    </div>
+
+</section>
+
+<!-- experience section ends -->
+
+<!-- portfolio section starts  -->
+
+<section class="portfolio" id="portfolio">
+
+    <h1 class="heading"> <span> my </span> portfolio </h1>
+
+    <div class="box-container">
+
+        <div class="box">
+            <img src="images/img-1.jpg" alt="">
+            <h3> project 01 </h3>
+            <div class="icons">
+                <a href="#" class="fas fa-link"></a>
+                <a href="#" class="fas fa-share"></a>
+                <a href="#" class="fas fa-search"></a>
+            </div>
+        </div>
+
+        <div class="box">
+            <img src="images/img-2.jpg" alt="">
+            <h3> project 02 </h3>
+            <div class="icons">
+                <a href="#" class="fas fa-link"></a>
+                <a href="#" class="fas fa-share"></a>
+                <a href="#" class="fas fa-search"></a>
+            </div>
+        </div>
+
+        <div class="box">
+            <img src="images/img-3.jpg" alt="">
+            <h3> project 03 </h3>
+            <div class="icons">
+                <a href="#" class="fas fa-link"></a>
+                <a href="#" class="fas fa-share"></a>
+                <a href="#" class="fas fa-search"></a>
+            </div>
+        </div>
+
+        <div class="box">
+            <img src="images/img-4.jpg" alt="">
+            <h3> project 04 </h3>
+            <div class="icons">
+                <a href="#" class="fas fa-link"></a>
+                <a href="#" class="fas fa-share"></a>
+                <a href="#" class="fas fa-search"></a>
+            </div>
+        </div>
+
+        <div class="box">
+            <img src="images/img-5.jpg" alt="">
+            <h3> project 05 </h3>
+            <div class="icons">
+                <a href="#" class="fas fa-link"></a>
+                <a href="#" class="fas fa-share"></a>
+                <a href="#" class="fas fa-search"></a>
+            </div>
+        </div>
+
+        <div class="box">
+            <img src="images/img-6.jpg" alt="">
+            <h3> project 06 </h3>
+            <div class="icons">
+                <a href="#" class="fas fa-link"></a>
+                <a href="#" class="fas fa-share"></a>
+                <a href="#" class="fas fa-search"></a>
+            </div>
+        </div>
+
+    </div>
+
+</section>
+
+<!-- portfolio section ends -->
+
+<!-- contact section starts  -->
+
+<section class="contact" id="contact">
+
+    <h1 class="heading"> contact <span> me </span> </h1>
+
+    <div class="icons-container">
+
+        <div class="icons">
+            <i class="fas fa-envelope"></i>
+            <h3>my email</h3>
+            <p>vikashraj0024@gmail.com</p>
+          
+        </div>
+
+        <div class="icons">
+            <i class="fas fa-phone"></i>
+            <h3>my number</h3>
+            <p>+91-8087490079</p>
+            
+        </div>
+
+        <div class="icons">
+            <i class="fas fa-map-marker-alt"></i>
+            <h3>my address</h3>
+            <p>bhairoganj, west-champaran, bihar, india - 845101</p>
+        </div>
+
+    </div>
+
+    <div class="row">
+
+        <form action="">
+
+            <input type="text" placeholder="name" class="box">
+            <input type="email" placeholder="email" class="box">
+            <input type="number" placeholder="number" class="box">
+
+            <textarea name="" placeholder="message" id="" cols="30" rows="10"></textarea>
+
+            <input type="submit" class="btn" value="send message">
+
+        </form>
+
+        <iframe class="map" src="https://www.google.com/maps/embed?pb=!1m22!1m8!1m3!1d1775.1267860512476!2d84.242368!3d27.1483109!3m2!1i1024!2i768!4f13.1!4m11!3e6!4m3!3m2!1d27.1491391!2d84.2432317!4m5!1s0x39947e76667f355b%3A0x4dbe341abca19d70!2sBhairoganj%20Bihar!3m2!1d27.1483109!2d84.242368!5e0!3m2!1sen!2sin!4v1671986855102!5m2!1sen!2sin" allowfullscreen="" loading="lazy"></iframe>
+
+    </div>
+    
+</section>
+
+<!-- contact section ends -->
+
+<!-- footer section  -->
+<footer class="footer"> created by <span> mr. vikash gupta </span> | all rights reserved! </footer>
+
 </body>
 </html>
